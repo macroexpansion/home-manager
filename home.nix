@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -79,6 +79,49 @@
           pull = {
               rebase = true;
           };
+      };
+  };
+
+  programs.kitty = {
+      enable = true;
+      shellIntegration = {
+          mode = "disabled";
+      };
+      font = {
+        name = "Cascadia Code";
+        package = pkgs.nerdfonts.override { fonts = ["CascadiaCode"]; };
+        size = 14;
+      };
+      settings = {
+# font_family         = "Cascadia Code SemiBold";
+# bold_font           = "Cascadia Code Bold";
+# italic_font         = "Cascadia Code SemiBold";
+# bold_italic_font    = "Cascadia Code Bold";
+        disable_ligatures   = "never";
+        cursor_shape = "block";
+        shell_integration = "disabled";
+        background = "#282a36";
+        foreground = "#ffffff";
+        color0 = "#282c34";
+        color8 = "#ffffff";
+        color1 = "#be5046";
+        color9 = "#e06c75";
+        color10 = "#1cdc9a";
+        color2 = "#1abc9c";
+        color3 = "#e5c07b";
+        color11 = "#e5d660";
+        color4 = "#56b6c2";
+        color12 = "#14ffff";
+        color13 = "#cb1ed1";
+        color5 = "#c678dd";
+        color6 = "#61afef";
+        color14 = "#1a8fff";
+        color7 = "#dddddd";
+        color15 = "#ffffff";
+        tab_bar_edge = "top";
+        tab_bar_style = "powerline";
+        hide_window_decorations = "yes";
+        macos_option_as_alt = "yes";
       };
   };
 }
