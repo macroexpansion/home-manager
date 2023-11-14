@@ -124,4 +124,8 @@
         macos_option_as_alt = "yes";
       };
   };
+
+  programs.ripgrep = {
+      enable = true;
+  };
 }
