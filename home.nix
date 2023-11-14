@@ -128,4 +128,8 @@
   programs.ripgrep = {
       enable = true;
   };
+
+  programs.bottom = {
+      enable = true;
+  };
 }
