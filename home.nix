@@ -132,4 +132,16 @@
   programs.bottom = {
       enable = true;
   };
+
+  programs.gh = {
+      enable = true;
+      settings = {
+          git_protocol = "ssh";
+          prompt = "enabled";
+      };
+      gitCredentialHelper = {
+          enable = true;
+          hosts = ["https://github.com"];
+      };
+  };
 }
