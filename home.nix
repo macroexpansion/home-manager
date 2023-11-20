@@ -144,4 +144,8 @@
           hosts = ["https://github.com"];
       };
   };
+
+  programs.gitui = {
+      enable = true;
+  };
 }
