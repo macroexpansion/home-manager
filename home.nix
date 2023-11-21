@@ -182,5 +182,7 @@
 
   programs.gitui = {
       enable = true;
+      keyConfig = ./configs/gitui/key_bindings.ron;
+      theme = ./configs/gitui/theme.ron;
   };
 }
