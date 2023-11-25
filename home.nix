@@ -210,4 +210,8 @@
       keyConfig = ./configs/gitui/key_bindings.ron;
       theme = ./configs/gitui/theme.ron;
   };
+
+  programs.fish {
+      enable = true;
+  }
 }
