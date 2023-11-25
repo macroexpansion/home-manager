@@ -211,7 +211,78 @@
       theme = ./configs/gitui/theme.ron;
   };
 
-  programs.fish {
+  programs.fish = {
       enable = true;
-  }
+      interactiveShellInit = ''
+        set --universal pure_enable_single_line_prompt true
+        set fish_greeting # Disable greeting
+        set -gx EDITOR nvim
+        set -g fish_prompt_pwd_dir_length 1
+        set -g theme_display_user yes
+        set -g theme_hide_hostname no
+        set -g theme_hostname always
+
+        set fish_color_normal f8f8f2
+        set fish_color_command a6e3a1
+        set fish_color_keyword f5c2e7
+        set fish_color_quote f9e2af
+        set fish_color_redirection f8f8f2
+        set fish_color_end fab387
+        set fish_color_error f38ba8
+        set fish_color_param f9e2af
+        set fish_color_comment a6adc8
+        set fish_color_selection --background=f38ba8
+        set fish_color_search_match --background=f38ba8
+        set fish_color_operator a6e3a1
+        set fish_color_escape f5c2e7
+        set fish_color_autosuggestion a6adc8
+        set fish_color_cancel f38ba8 --reverse
+        set fish_color_option fab387
+        set fish_color_history_current --bold
+        set fish_color_status f38ba8
+        set fish_color_valid_path --underline
+        set fish_color_cwd a6e3a1
+        set fish_color_cwd_root f38ba8
+        set fish_color_host cba6f7
+        set fish_color_host_remote cba6f7
+        set fish_color_user 74c7ec
+        set fish_pager_color_progress a6adc8
+        set fish_pager_color_background
+        set fish_pager_color_prefix 89dceb
+        set fish_pager_color_completion f8f8f2
+        set fish_pager_color_description a6adc8
+        set fish_pager_color_selected_background --background=f38ba8
+        set fish_pager_color_selected_prefix 89dceb
+        set fish_pager_color_selected_completion f8f8f2
+        set fish_pager_color_selected_description a6adc8
+        set fish_pager_color_secondary_background
+        set fish_pager_color_secondary_prefix 89dceb
+        set fish_pager_color_secondary_completion f8f8f2
+        set fish_pager_color_secondary_description a6adc8
+      '';
+      plugins = [
+# { name = "pure"; src = pkgs.fishPlugins.pure.src; }
+        { name = "bass"; src = pkgs.fishPlugins.bass.src; }
+        { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
+        { name = "git"; src = pkgs.fishPlugins.plugin-git.src; }
+        {
+            name = "z";
+            src = pkgs.fetchFromGitHub {
+                owner = "jethrokuan";
+                repo = "z";
+                rev = "e0e1b9dfdba362f8ab1ae8c1afc7ccf62b89f7eb";
+                sha256 = "0dbnir6jbwjpjalz14snzd3cgdysgcs3raznsijd6savad3qhijc";
+            };
+        }
+      ];
+      shellAliases = {
+          ".." = "cd ..";
+          "gitui" = "gitui -t theme.ron";
+      };
+      functions = {
+          lash = {
+              body = "ls -lash";
+          };
+      };
+  };
 }
