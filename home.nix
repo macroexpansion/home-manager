@@ -222,43 +222,33 @@
         set -g theme_hide_hostname no
         set -g theme_hostname always
 
-        set fish_color_normal f8f8f2
+
         set fish_color_command a6e3a1
-        set fish_color_keyword f5c2e7
-        set fish_color_quote f9e2af
-        set fish_color_redirection f8f8f2
+        set fish_color_param f2cdcd
+        set fish_color_keyword f38ba8
+        set fish_color_quote a6e3a1
+        set fish_color_redirection f5c2e7
         set fish_color_end fab387
+        set fish_color_comment 7f849c
         set fish_color_error f38ba8
-        set fish_color_param f9e2af
-        set fish_color_comment a6adc8
+        set fish_color_gray 6c7086
         set fish_color_selection --background=f38ba8
         set fish_color_search_match --background=f38ba8
-        set fish_color_operator a6e3a1
-        set fish_color_escape f5c2e7
-        set fish_color_autosuggestion a6adc8
-        set fish_color_cancel f38ba8 --reverse
-        set fish_color_option fab387
-        set fish_color_history_current --bold
+        set fish_color_option a6e3a1
+        set fish_color_operator f5c2e7
+        set fish_color_escape eba0ac
+        set fish_color_autosuggestion 6c7086
+        set fish_color_cancel f38ba8
+        set fish_color_cwd f9e2af
+        set fish_color_user 94e2d5
+        set fish_color_host 89b4fa
+        set fish_color_host_remote a6e3a1
         set fish_color_status f38ba8
-        set fish_color_valid_path --underline
-        set fish_color_cwd a6e3a1
-        set fish_color_cwd_root f38ba8
-        set fish_color_host cba6f7
-        set fish_color_host_remote cba6f7
-        set fish_color_user 74c7ec
-        set fish_pager_color_progress a6adc8
-        set fish_pager_color_background
-        set fish_pager_color_prefix 89dceb
-        set fish_pager_color_completion f8f8f2
-        set fish_pager_color_description a6adc8
-        set fish_pager_color_selected_background --background=f38ba8
-        set fish_pager_color_selected_prefix 89dceb
-        set fish_pager_color_selected_completion f8f8f2
-        set fish_pager_color_selected_description a6adc8
-        set fish_pager_color_secondary_background
-        set fish_pager_color_secondary_prefix 89dceb
-        set fish_pager_color_secondary_completion f8f8f2
-        set fish_pager_color_secondary_description a6adc8
+        set fish_pager_color_progress 6c7086
+        set fish_pager_color_prefix f5c2e7
+        set fish_pager_color_completion cdd6f4
+        set fish_pager_color_description 6c7086
+        set fish_color_normal cdd6f4
       '';
       plugins = [
 # { name = "pure"; src = pkgs.fishPlugins.pure.src; }
