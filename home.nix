@@ -18,6 +18,9 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.fnm
+    # pkgs.oh-my-fish
+
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -43,6 +46,7 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
+    ".config/fish/themes/mocha.theme".source = configs/fish/themes/mocha.theme;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -62,7 +66,7 @@
   #
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
@@ -213,45 +217,19 @@
 
   programs.fish = {
       enable = true;
+      shellInit = ''
+        fnm env | source
+      '';
       interactiveShellInit = ''
         set --universal pure_enable_single_line_prompt true
         set fish_greeting # Disable greeting
-        set -gx EDITOR nvim
         set -g fish_prompt_pwd_dir_length 1
         set -g theme_display_user yes
         set -g theme_hide_hostname no
         set -g theme_hostname always
-
-
-        set fish_color_command a6e3a1
-        set fish_color_param f2cdcd
-        set fish_color_keyword f38ba8
-        set fish_color_quote a6e3a1
-        set fish_color_redirection f5c2e7
-        set fish_color_end fab387
-        set fish_color_comment 7f849c
-        set fish_color_error f38ba8
-        set fish_color_gray 6c7086
-        set fish_color_selection --background=f38ba8
-        set fish_color_search_match --background=f38ba8
-        set fish_color_option a6e3a1
-        set fish_color_operator f5c2e7
-        set fish_color_escape eba0ac
-        set fish_color_autosuggestion 6c7086
-        set fish_color_cancel f38ba8
-        set fish_color_cwd f9e2af
-        set fish_color_user 94e2d5
-        set fish_color_host 89b4fa
-        set fish_color_host_remote a6e3a1
-        set fish_color_status f38ba8
-        set fish_pager_color_progress 6c7086
-        set fish_pager_color_prefix f5c2e7
-        set fish_pager_color_completion cdd6f4
-        set fish_pager_color_description 6c7086
-        set fish_color_normal cdd6f4
       '';
       plugins = [
-# { name = "pure"; src = pkgs.fishPlugins.pure.src; }
+        # { name = "pure"; src = pkgs.fishPlugins.pure.src; }
         { name = "bass"; src = pkgs.fishPlugins.bass.src; }
         { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
         { name = "git"; src = pkgs.fishPlugins.plugin-git.src; }
