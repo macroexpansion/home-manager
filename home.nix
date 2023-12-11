@@ -92,7 +92,7 @@
           mode = "disabled";
       };
       font = {
-        name = "Cascadia Code";
+        name = "CaskaydiaCove Nerd Font Mono";
         package = pkgs.nerdfonts.override { fonts = ["CascadiaCode"]; };
         size = 14;
       };
