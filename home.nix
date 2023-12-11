@@ -215,6 +215,13 @@
       theme = ./configs/gitui/theme.ron;
   };
 
+  programs.eza = {
+      enable = true;
+      enableAliases = true;
+      icons = true;
+      git = true;
+  };
+
   programs.fish = {
       enable = true;
       shellInit = ''
