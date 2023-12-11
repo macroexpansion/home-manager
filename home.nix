@@ -19,6 +19,7 @@
   # environment.
   home.packages = [
     pkgs.fnm
+    pkgs.fd
     # pkgs.oh-my-fish
 
     # # Adds the 'hello' command to your environment. It prints a friendly
