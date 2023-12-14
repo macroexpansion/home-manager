@@ -20,7 +20,6 @@
   home.packages = [
     pkgs.fnm
     pkgs.fd
-    pkgs.virtualenv
     pkgs.pyenv
     # pkgs.oh-my-fish
 
