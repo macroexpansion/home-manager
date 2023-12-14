@@ -229,6 +229,7 @@
       enable = true;
       shellInit = ''
         fnm env | source
+        pyenv init - | source
       '';
       interactiveShellInit = ''
         set --universal pure_enable_single_line_prompt true
@@ -237,6 +238,9 @@
         set -g theme_display_user yes
         set -g theme_hide_hostname no
         set -g theme_hostname always
+
+        set -Ux PYENV_ROOT $HOME/.pyenv
+        set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
       '';
       plugins = [
         # { name = "pure"; src = pkgs.fishPlugins.pure.src; }
