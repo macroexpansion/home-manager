@@ -232,12 +232,13 @@
         pyenv init - | source
       '';
       interactiveShellInit = ''
-        set --universal pure_enable_single_line_prompt true
         set fish_greeting # Disable greeting
+
         set -g fish_prompt_pwd_dir_length 1
         set -g theme_display_user yes
         set -g theme_hide_hostname no
         set -g theme_hostname always
+        set -g fish_key_bindings fish_vi_key_bindings # Set Vi-mode key bindings
 
         set -Ux PYENV_ROOT $HOME/.pyenv
         set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
