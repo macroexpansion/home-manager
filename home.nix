@@ -85,6 +85,12 @@
           pull = {
               rebase = true;
           };
+          column = {
+              ui = "auto";
+          };
+          branch = {
+              sort = "-committerdate";
+          };
       };
   };
 
