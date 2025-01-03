@@ -148,19 +148,21 @@
       shellInit = ''
         set fish_greeting # Disable greeting
 
-	fish_config theme choose mocha
-
-	fish_add_path "${config.home.homeDirectory}/.nix-profile/bin"
-	fish_add_path /nix/var/nix/profiles/default/bin
+        fish_add_path "${config.home.homeDirectory}/.nix-profile/bin"
+        fish_add_path /nix/var/nix/profiles/default/bin
 
         fnm env | source
       '';
       interactiveShellInit = ''
+        fish_config theme choose mocha
+
         set -g fish_prompt_pwd_dir_length 1
         set -g theme_display_user yes
         set -g theme_hide_hostname no
         set -g theme_hostname always
         set -g fish_key_bindings fish_vi_key_bindings # Set Vi-mode key bindings
+
+        zoxide init fish | source
       '';
       plugins = [
         # { name = "pure"; src = pkgs.fishPlugins.pure.src; }
