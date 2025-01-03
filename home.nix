@@ -155,6 +155,7 @@
         fish_add_path /opt/homebrew/bin
         fish_add_path "${config.home.homeDirectory}/go/bin"
         fish_add_path "${config.home.homeDirectory}/.cargo/bin"
+        fish_add_path "${config.home.homeDirectory}/.orbstack/bin"
 
         fnm env | source
       '';
