@@ -27,6 +27,7 @@
     pkgs.fastfetch
     pkgs.uwufetch
     pkgs.awscli2
+    pkgs.inetutils
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
