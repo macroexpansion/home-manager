@@ -26,6 +26,7 @@
     pkgs.zoxide
     pkgs.fastfetch
     pkgs.uwufetch
+    pkgs.awscli2
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
