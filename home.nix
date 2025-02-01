@@ -28,6 +28,8 @@
     pkgs.uwufetch
     pkgs.awscli2
     pkgs.inetutils
+    pkgs.k9s
+    pkgs.kubectx
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
