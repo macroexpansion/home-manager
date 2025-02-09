@@ -31,6 +31,7 @@
     pkgs.k9s
     pkgs.kubectx
     pkgs.pre-commit
+    pkgs.zig
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
