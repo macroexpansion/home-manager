@@ -184,7 +184,6 @@
       ];
       shellAliases = {
           ".." = "cd ..";
-          "gitui" = "gitui -t theme.ron";
       };
       functions = {
           lash = {
