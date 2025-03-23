@@ -34,6 +34,7 @@
     pkgs.zig
     pkgs.jujutsu
     pkgs.kubernetes-helm
+    pkgs.git-lfs
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
