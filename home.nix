@@ -35,7 +35,10 @@
     pkgs.jujutsu
     pkgs.kubernetes-helm
     pkgs.yazi
+    pkgs.nerd-fonts.caskaydia-cove
   ];
+
+  fonts.fontconfig.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -195,7 +198,7 @@
   };
 
   programs.kitty = {
-      enable = true;
+      enable = false;
       shellIntegration = {
           mode = "disabled";
       };
