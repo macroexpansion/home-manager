@@ -218,6 +218,7 @@
         tab_title_template = "{title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}";
         hide_window_decorations = "yes";
         macos_option_as_alt = "yes";
+        linux_display_server = "wayland";
 
         foreground = "#CDD6F4";
         background = "#1E1E2E";
