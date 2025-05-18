@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+    unstable = import <nixos-unstable> { };
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -17,25 +20,26 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    pkgs.fnm
-    pkgs.fd
-    pkgs.neovim
-    pkgs.uv
-    pkgs.rustup
-    pkgs.zoxide
-    pkgs.fastfetch
-    pkgs.uwufetch
-    pkgs.awscli2
-    pkgs.inetutils
-    pkgs.k9s
-    pkgs.kubectx
-    pkgs.pre-commit
-    pkgs.zig
-    pkgs.jujutsu
-    pkgs.kubernetes-helm
-    pkgs.yazi
-    pkgs.nerd-fonts.caskaydia-cove
+  home.packages = with pkgs; [
+    fnm
+    fd
+    uv
+    rustup
+    zoxide
+    fastfetch
+    uwufetch
+    awscli2
+    inetutils
+    k9s
+    kubectx
+    pre-commit
+    zig
+    jujutsu
+    kubernetes-helm
+    yazi
+    nerd-fonts.caskaydia-cove
+  ] ++ [
+    unstable.neovim
   ];
 
   fonts.fontconfig.enable = true;
@@ -198,7 +202,8 @@
   };
 
   programs.kitty = {
-      enable = false;
+      enable = true;
+      package = unstable.kitty;
       shellIntegration = {
           mode = "disabled";
       };
