@@ -202,7 +202,7 @@ in
   };
 
   programs.kitty = {
-      enable = true;
+      enable = false;
       package = unstable.kitty;
       shellIntegration = {
           mode = "disabled";
