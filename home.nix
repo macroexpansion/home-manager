@@ -33,7 +33,7 @@ in
     k9s
     kubectx
     pre-commit
-    zig
+    # zig
     jujutsu
     kubernetes-helm
     yazi
