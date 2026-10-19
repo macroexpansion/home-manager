@@ -198,6 +198,18 @@ in
           lash = {
               body = "ls -lash";
           };
+          fcd = {
+              body = ''
+                  set -l target (fd --hidden --exclude .git . $argv[1] | fzf --preview '[ -d {} ] && ls -la {} || head -50 {}')
+                  test -z "$target"; and return
+
+                  if test -d "$target"
+                      cd "$target"
+                  else
+                      cd (dirname "$target")
+                  end
+              '';
+          };
       };
   };
 
